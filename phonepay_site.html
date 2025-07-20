@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Image with Text</title>
+    <style>
+    .container {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    align-items:center;
+    gap: 80px;
+    padding: 20px 40px;
+    background-color: white;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+
+        .phonepay_icon {
+          margin-left: 100px;
+            width: 100px;
+            height: auto;
+        }
+
+        .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      font-size: 18px;
+      font-family: Arial, sans-serif;
+    }
+    input[type="radio"] {
+      display: none;
+    }
+
+    /* Slides container */
+  .slides {
+  width: 100vw; /* Full viewport width */
+  height: 1000px; /* You can adjust height */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Optional: ensures the image fills without distortion */
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+    /* Show selected slide */
+    #radio1:checked ~ .slides .s1,
+    #radio2:checked ~ .slides .s2,
+    #radio3:checked ~ .slides .s3,
+    #radio4:checked ~ .slides .s4,
+    #radio5:checked ~ .slides .s5,
+    #radio6:checked ~ .slides .s6 {
+      opacity: 1;
+    }
+
+    /* Dot Navigation */
+    .navigation {
+      text-align: center;
+      margin-top: 15px;
+    }
+
+    .bar {
+      display: inline-block;
+      height: 12px;
+      width: 12px;
+      margin: 0 6px;
+      border-radius: 50px;
+      background-color: #e0e0e0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    /* Active dot style (long & purple) */
+    #radio1:checked ~ .navigation label[for="radio1"],
+    #radio2:checked ~ .navigation label[for="radio2"],
+    #radio3:checked ~ .navigation label[for="radio3"],
+    #radio4:checked ~ .navigation label[for="radio4"],
+    #radio5:checked ~ .navigation label[for="radio5"],
+    #radio6:checked ~ .navigation label[for="radio6"] {
+      width: 40px;
+      background-color: #4B2E83;
+    }
+    .card-container {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      width: 400px;
+      height: 300px;
+      padding: 30px 20px;
+      text-align: left;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .card h2 {
+      font-size: 24px;
+      color: #2e1065;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    .arrow {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      font-size: 24px;
+      color: #4B2E83;
+      transition: transform 0.3s;
+    }
+
+    .card:hover .arrow {
+      transform: translateX(5px);
+    }
+    .center-image {
+  text-align: center;
+}
+.center-image img {
+  display: inline-block;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <img class="phonepay_icon" src="Screenshot 2025-07-18 230146.png" alt="error">
+        
+    <span>OUR SOLUTIONS</span>
+    <span>PRESS</span>
+    <span>CAREERS</span>
+    <span>ABOUT US</span>
+    <span>BLOG</span>
+    <span>CONTACT US</span>
+    <span>TRUST & SAFETY</span>
+  </div>
+  <input type="radio" name="slider" id="radio1" checked>
+  <input type="radio" name="slider" id="radio2">
+  <input type="radio" name="slider" id="radio3">
+  <input type="radio" name="slider" id="radio4">
+  <input type="radio" name="slider" id="radio5">
+  <input type="radio" name="slider" id="radio6">
+
+  <!-- Slides -->
+  <div class="slides">
+    <img class="slide s1" src="s1.png" alt="Slide 1">
+    <img class="slide s2" src="s2.png" alt="Slide 2">
+    <img class="slide s3" src="s3.png" alt="Slide 3">
+    <img class="slide s4" src="s4.png" alt="Slide 4">
+    <img class="slide s5" src="s5.png" alt="Slide 5">
+    <img class="slide s6" src="s6.png" alt="Slide 6">
+  </div>
+
+  <!-- Dot Navigation -->
+  <div class="navigation">
+    <label for="radio1" class="bar"></label>
+    <label for="radio2" class="bar"></label>
+    <label for="radio3" class="bar"></label>
+    <label for="radio4" class="bar"></label>
+    <label for="radio5" class="bar"></label>
+    <label for="radio6" class="bar"></label>
+  </div>
+  <div class="card-container">
+  <div class="card">
+    <img src="ss1.png" alt="Investment">
+    <h2>Investment</h2>
+    <p>Build, manage & grow your wealth</p>
+    <div class="arrow">&#8594;</div>
+  </div>
+
+  <div class="card">
+    <img src="ss2.png" alt="Insurance">
+    <h2>Insurance</h2>
+    <p>Protect, plan & secure your future</p>
+    <div class="arrow">&#8594;</div>
+  </div>
+
+  <div class="card">
+    <img src="ss3.png" alt="Lending">
+    <h2>Lending</h2>
+    <p>Access quick, transparent & secure loans</p>
+    <div class="arrow">&#8594;</div>
+  </div>
+</div>
+<div class="center-image">
+  <img src="last.png" alt="Centered Image">
+</div>
+
+
+
+</body>
+</html>
